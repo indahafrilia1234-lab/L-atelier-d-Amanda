@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Linktree · Aksesoris Pink Elegant</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      /* =========================================
+         RESET & BACKGROUND DENGAN DEKORASI MANIK
+         ========================================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Quicksand", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow-x: hidden;
+        background: linear-gradient(
+          135deg,
+          #ffe4ec 0%,
+          #fce4ec 50%,
+          #f8bbd0 100%
+        );
+      }
+
+      /* Partikel Manik-Manik (Beads) Melayang */
+      .beads-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .bead {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #ffffff,
+          #f8bbd0,
+          #f48fb1
+        );
+        box-shadow:
+          0 4px 15px rgba(244, 143, 177, 0.4),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+        animation: floatBead 8s infinite ease-in-out;
+      }
+
+      /* Animasi manik melayang */
+      @keyframes floatBead {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-30px) rotate(20deg);
+          opacity: 1;
+        }
+      }
+
+      /* =========================================
+         KARTU UTAMA (Elegan & Glassmorphism)
+         ========================================= */
+      .card {
+        position: relative;
+        z-index: 10;
+        max-width: 400px;
+        width: 100%;
+        background: rgba(255, 245, 247, 0.65);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 40px;
+        padding: 30px 24px 40px;
+        box-shadow:
+          0 20px 50px rgba(255, 105, 135, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 220, 230, 0.8);
+        text-align: center;
+        overflow: hidden;
+      }
+
+      /* Garis border atas elegan */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 182, 193, 0.4),
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      /* =========================================
+         AVATAR & ANIMASI
+         ========================================= */
+      .avatar-wrapper {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+      }
+
+      /* Cincin berputar mengelilingi avatar */
+      .ring {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 2px dashed #f48fb1;
+        animation: spinRing 15s linear infinite;
+      }
+
+      @keyframes spinRing {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Lingkaran avatar */
+      .avatar {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, #ffb6c9, #ff8aae);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(244, 143, 177, 0.5);
+        border: 4px solid #ffffff;
+        overflow: hidden;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Hiasan pita kecil di atas avatar */
+      .ribbon {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        font-size: 24px;
+        color: #d45a7a;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        animation: bounceRibbon 2s infinite;
+      }
+
+      @keyframes bounceRibbon {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* =========================================
+         TEKS & SUBTITLE
+         ========================================= */
+      .title {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: #6b3b4a;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 8px rgba(255, 200, 210, 0.6);
+      }
+
+      .subtitle {
+        font-size: 14px;
+        font-weight: 600;
+        color: #9f5e72;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 220, 230, 0.6),
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 220, 230, 0.6)
+        );
+        display: inline-block;
+        padding: 6px 24px;
+        border-radius: 40px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 205, 217, 0.8);
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 10px rgba(255, 140, 160, 0.1);
+      }
+
+      /* =========================================
+         TOMBOL LINK (Dengan Animasi & Icon Manik)
+         ========================================= */
+      .link-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .link-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 210, 220, 0.9);
+        border-radius: 50px;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #4f2d3a;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px rgba(255, 130, 160, 0.15);
+        gap: 12px;
+        overflow: hidden;
+      }
+
+      .link-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .link-item:hover::before {
+        left: 100%;
+      }
+
+      .link-item:hover {
+        transform: translateY(-4px) scale(1.02);
+        background: #ffeef2;
+        border-color: #f78ca8;
+        box-shadow: 0 10px 25px rgba(248, 160, 184, 0.4);
+      }
+
+      .link-item i {
+        font-size: 22px;
+        width: 32px;
+        text-align: center;
+      }
+
+      /* Efek Manik kecil muncul saat hover */
+      .link-item::after {
+        content: "✦";
+        position: absolute;
+        right: 20px;
+        font-size: 14px;
+        color: #ff8aae;
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+        transition: all 0.3s;
+      }
+
+      .link-item:hover::after {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+      }
+
+      .link-item span {
+        flex: 1;
+        text-align: left;
+      }
+
+      /* Warna ikon */
+      .link-item .fa-shopping-bag {
+        color: #ff6b6b;
+      }
+      .link-item .fa-store {
+        color: #ff8aae;
+      }
+      .link-item .fa-instagram {
+        color: #d62976;
+      }
+      .link-item .fa-whatsapp {
+        color: #25d366;
+      }
+
+      /* =========================================
+         TOMBOL SALIN & FOOTER
+         ========================================= */
+      .copy-tip {
+        font-size: 13px;
+        color: #9f6279;
+        margin: 0 auto 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 220, 230, 0.4);
+        padding: 8px 16px;
+        border-radius: 40px;
+        width: fit-content;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 1px solid transparent;
+      }
+
+      .copy-tip:hover {
+        background: #fff;
+        border-color: #f48fb1;
+        color: #d45a7a;
+        box-shadow: 0 4px 12px rgba(244, 143, 177, 0.2);
+      }
+
+      .footer-note {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 14px;
+        color: #9f5e72;
+        background: rgba(255, 240, 245, 0.8);
+        padding: 10px;
+        border-radius: 50px;
+        border: 1px solid #ffe0e8;
+      }
+
+      .footer-note i {
+        color: #d45a7a;
+        margin: 0 5px;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 450px) {
+        .card {
+          padding: 24px 18px 30px;
+        }
+        .title {
+          font-size: 22px;
+        }
+        .link-item {
+          font-size: 14px;
+          padding: 10px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Manik-Manik Melayang -->
+    <div class="beads-bg" id="beadsBg"></div>
+
+    <div class="card">
+      <!-- GANTI FOTO DI SINI -->
+      <div class="avatar-wrapper">
+        <div class="ring"></div>
+        <div class="avatar">
+          <img src="logo ld.jpeg" alt="Foto Profil" />
+        </div>
+        <i class="fas fa-ribbon ribbon"></i>
+      </div>
+
+      <h1 class="title">🎀 L'atelier d'Amanda</h1>
+      <div class="subtitle">
+        <i class="fas fa-gem" style="color: #d45a7a; margin-right: 6px"></i>
+        Aksesoris & Perhiasan Elegan
+      </div>
+
+      <div class="link-list">
+        <!-- Shopee -->
+        <a href="#" class="link-item" target="_blank" rel="noopener">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Shopee</span>
+        </a>
+
+        <!-- TikTok Shop -->
+        <a
+          href="https://www.tiktok.com/@latelier.damanda6?_r=1&_t=ZS-999A3Ba8tim"
+          class="link-item"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fas fa-store"></i>
+          <span>TikTok Shop</span>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/latelier.damanda?igsi=MWx2c21xdjhwNDdqZg=="
+          class="link-item"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/628123456789"
+          class="link-item"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fab fa-whatsapp"></i>
+          <span>+62 812 3456 789</span>
+        </a>
+      </div>
+
+      <!-- Tombol Salin -->
+      <div class="copy-tip" onclick="copyPhone()">
+        <i class="fas fa-copy"></i> Salin Nomor HP
+      </div>
+
+      <div class="footer-note">
+        <i class="fas fa-heart"></i> Temani Gaya Mu <i class="fas fa-heart"></i>
+      </div>
+    </div>
+
+    <script>
+      // Fungsi membuat manik-manik melayang di background
+      function createBeads() {
+        const container = document.getElementById("beadsBg");
+        const beadCount = 15;
+        for (let i = 0; i < beadCount; i++) {
+          const bead = document.createElement("div");
+          bead.className = "bead";
+          const size = Math.random() * 20 + 8; // ukuran 8px - 28px
+          bead.style.width = size + "px";
+          bead.style.height = size + "px";
+          bead.style.left = Math.random() * 100 + "vw";
+          bead.style.top = Math.random() * 100 + "vh";
+          bead.style.animationDelay = Math.random() * 5 + "s";
+          bead.style.animationDuration = Math.random() * 5 + 6 + "s";
+          container.appendChild(bead);
+        }
+      }
+      createBeads();
+
+      // Fungsi copy nomor HP
+      function copyPhone() {
+        const phoneNumber = "+628123456789";
+        navigator.clipboard
+          .writeText(phoneNumber)
+          .then(() => {
+            const tip = document.querySelector(".copy-tip");
+            const originalHTML = tip.innerHTML;
+            tip.innerHTML =
+              '<i class="fas fa-check-circle"></i> Nomor Tersalin!';
+            tip.style.background = "#d4edda";
+            tip.style.color = "#155724";
+            setTimeout(() => {
+              tip.innerHTML = originalHTML;
+              tip.style.background = "rgba(255, 220, 230, 0.4)";
+              tip.style.color = "#9f6279";
+            }, 1800);
+          })
+          .catch(() => {
+            alert("Silakan salin nomor secara manual: +628123456789");
+          });
+      }
+    </script>
+  </body>
+</html>
